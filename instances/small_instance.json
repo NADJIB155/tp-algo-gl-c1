@@ -1,0 +1,11 @@
+{
+  "name": "Petite Instance Démo GL-C1",
+  "num_requirements": 5,
+  "requirements": ["e1", "e2", "e3", "e4", "e5"],
+  "tests": {
+    "T1": ["e1", "e2", "e3"],
+    "T2": ["e2", "e4"],
+    "T3": ["e3", "e4", "e5"],
+    "T4": ["e4", "e5"]
+  }
+}
