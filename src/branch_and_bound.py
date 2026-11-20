@@ -38,9 +38,8 @@ BRANCHEMENT :
 import time
 
 
-# ─────────────────────────────────────────────────────────────────────
+
 #  Fonctions auxiliaires (hors de la récursion principale)
-# ─────────────────────────────────────────────────────────────────────
 
 def _rarete(restant, tests_disponibles, tests):
     """Compte, pour chaque exigence restante, combien de tests disponibles
@@ -78,9 +77,8 @@ def _borne_inferieure(restant, tests_disponibles, tests):
     return (len(restant) + max_gain - 1) // max_gain
 
 
-# ─────────────────────────────────────────────────────────────────────
 #  Algorithme principal
-# ─────────────────────────────────────────────────────────────────────
+
 
 def branch_and_bound(exigences, tests, ub_init=None, generer_arbre=False,
                      solution_initiale=None):
@@ -142,9 +140,9 @@ def branch_and_bound(exigences, tests, ub_init=None, generer_arbre=False,
         generer_arbre = False
         arbre = None
 
-    # ─────────────────────────────────────────────────────────────────
+    
     #  Fonction récursive : explore un nœud de l'arbre
-    # ─────────────────────────────────────────────────────────────────
+    
     def explorer(selection, couvert, profondeur, id_parent=None, decision=""):
         etat["noeuds"] += 1
         etat["profondeur_max"] = max(etat["profondeur_max"], profondeur)
@@ -182,7 +180,7 @@ def branch_and_bound(exigences, tests, ub_init=None, generer_arbre=False,
                     etat["elagages_lb"] += 1
                     type_noeud = "prune"
 
-        # ── Enregistrement du nœud dans l'arbre (si demandé) ──
+        # ── Enregistrement du nœud dans l'arbre 
         id_noeud = None
         if generer_arbre and not limite_atteinte[0]:
             compteur_noeud[0] += 1
@@ -242,9 +240,8 @@ def branch_and_bound(exigences, tests, ub_init=None, generer_arbre=False,
             arbre)
 
 
-# ─────────────────────────────────────────────────────────────────────
+
 #  Export Graphviz (.dot)
-# ─────────────────────────────────────────────────────────────────────
 
 def exporter_graphviz(arbre, chemin):
     """Exporte l'arbre de recherche au format DOT (Graphviz).
