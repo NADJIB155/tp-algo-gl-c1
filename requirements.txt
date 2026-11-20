@@ -1,0 +1,11 @@
+# Dépendances du projet GL-C1
+# ----------------------------
+# Tous les modules utilisent UNIQUEMENT la bibliothèque standard Python 3.
+# Aucune installation pip n'est nécessaire.
+
+# Python >= 3.8 recommandé.
+
+# Pour rendre l'arbre Graphviz en image (optionnel) :
+#   sudo apt install graphviz
+# puis :
+#   dot -Tpng arbre_bb.dot -o arbre_bb.png
