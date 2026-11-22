@@ -49,6 +49,27 @@ Le fichier "medium_instance.json" contient :
 
 Chaque test couvre un sous-ensemble des exigences disponibles.
 
+Solution
+
+On peut sélectionner les tests T1, T2, T5 et T7.
+
+- T1 = {e1, e2, e4}
+- T2 = {e2, e3, e5}
+- T5 = {e6, e7, e8}
+- T7 = {e3, e9, e10}
+
+Leur union couvre toutes les exigences :
+
+T1 ∪ T2 ∪ T5 ∪ T7 = {e1, e2, e3, e4, e5, e6, e7, e8, e9, e10} = U
+
+Justification de l'optimalité
+
+Chaque test couvre au maximum 3 exigences. Ainsi, 3 tests peuvent couvrir au maximum 9 exigences, ce qui est insuffisant pour couvrir les 10 exigences de l'univers U.
+
+Par conséquent, il faut au minimum 4 tests.
+
+Puisque les tests T1, T2, T5 et T7 couvrent toutes les exigences, la solution optimale est de sélectionner 4 tests.
+
 Cette instance permet d'étudier le comportement des méthodes de résolution sur un problème plus grand que la petite instance.
 
 4. Intérêt des jeux d'essai

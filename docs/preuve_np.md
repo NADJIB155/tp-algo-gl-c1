@@ -65,6 +65,31 @@ Ces opérations peuvent être effectuées en temps polynomial par rapport à la 
 
 Il est donc possible de vérifier efficacement une solution proposée, sans devoir rechercher toutes les solutions possibles.
 
+Pour analyser le temps nécessaire à la vérification du certificat, on définit :
+
+- m : le nombre total d'exigences dans l'univers U.
+- n : le nombre total de tests disponibles.
+- c : le nombre de tests sélectionnés dans le certificat.
+- L : le nombre total d'exigences parcourues dans les tests sélectionnés.
+
+La vérification s'effectue en trois étapes :
+
+1. Vérification de la taille : on vérifie que le nombre de tests sélectionnés est inférieur ou égal à k. Cette opération prend un temps O(c).
+
+2. Vérification de la couverture : on crée un tableau booléen de taille m, initialisé à Faux. Pour chaque test sélectionné, on parcourt les exigences qu'il couvre et on marque les exigences correspondantes dans le tableau. Cette opération prend un temps O(L).
+
+3. Vérification finale : on parcourt le tableau pour vérifier que toutes les exigences sont couvertes. Cette étape prend un temps O(m).
+
+Le temps total de vérification est donc :
+
+O(c + L + m).
+
+Or, c ≤ n et chaque test peut couvrir au maximum m exigences. Ainsi :
+
+L ≤ c × m ≤ n × m.
+
+Par conséquent, le temps de vérification est borné par O(n × m), ce qui est polynomial par rapport à la taille de l'instance.
+
 3.4. Conclusion
 
 Nous avons montré qu'un certificat de Set Cover peut être vérifié en temps polynomial.
